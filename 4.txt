@@ -1,0 +1,29 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+void peremena(int * dima)
+{
+	int c;
+	for (int i = 0; i < 11; i += 2)
+	{
+		c = dima [i];
+		dima [i] = dima [i + 1];
+		dima [i + 1] = c;
+	}
+	for (int i = 0; i < 12; i++)
+	{
+		cout << dima [i] << " ";
+	}
+}
+int main()
+{
+	int *dima = new int[12];
+	for (int i = 0; i < 12; i++)
+	{
+		cout << " dima [" << i << "]= ";
+		cin >> dima [i];
+	}
+	peremena(dima);
+	delete[] dima;
+	return 0;
+}

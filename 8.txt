@@ -1,0 +1,15 @@
+#include <fstream>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	char mars[50];
+	ifstream stream("enter.txt");
+	while (!stream.eof()) {
+		stream >> mars;
+		cout << mars << endl;
+	}
+	stream.close();
+	return 0;
+}

@@ -1,0 +1,68 @@
+#include "pch.h"
+#include <iostream>
+#include <clocale>
+using namespace std;
+void menu()
+{
+	cout << "Enter: " << endl;
+	cout << "+" << endl;
+	cout << "-" << endl;
+	cout << "/" << endl;
+	cout << "*" << endl;
+}
+void calc(int x, int y)
+{
+	char del;
+	float z;
+	menu();
+	cin >> del;
+	switch (del)
+	{
+	case'+':
+		z = x + y;
+		break;
+	case'*':
+		z = x * y;
+		break;
+	case'/':
+		z = x / y;
+		break;
+	case'-':
+		z = x - y;
+		break;
+	}
+	cout << "Result:" << z << endl;
+}
+void calc(float x, float y)
+{
+	char del;
+	float z;
+	menu();
+	cin >> del;
+	switch (del)
+	{
+	case'+':
+		z = x + y;
+		break;
+	case'*':
+		z = x * y;
+		break;
+	case'/':
+		z = x / y;
+		break;
+	case'-':
+		z = x - y;
+		break;
+	}
+	cout << "Result:" << z << endl;
+}
+int main()
+{
+	float x, y;
+	cout << "Hey! Please enter 2 Integer: " << endl;
+	cin >> x >> y;
+	calc(x, y);
+	cout << "Hey! Please enter 2 fractional: " << endl;
+	cin >> x >> y;
+	calc(x, y);
+}

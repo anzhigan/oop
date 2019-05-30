@@ -1,0 +1,95 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <stdio.h>
+using namespace std;
+class Books
+{
+public:
+	string Book_avtor;
+	string Book_name;
+	int Book_price;
+	void setbooks()
+	{
+		cout << "Введите название книги,имя книги и цену" << "\n";
+		cin >> Book_avtor >> Book_name >> Book_price;
+		cout << "________________________________________" << "\n";
+	}
+	void conclusion()
+	{
+		cout << "Автор" << Book_avtor << "Имя книги" << Book_name << "Цена книги:" << Book_price << "\n";
+		cout << "___________________________________________________________________________" << "\n";
+	}
+	void check()
+	{
+		cout << "Цена с учетом налогов " << Book_price / 0.18 << "\n";
+		cout << "Цена с учетом скидки" << Book_price * 0.2 << "\n";
+		cout << "________________________________________" << "\n";
+	}
+
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	Books book1, book2, book3, book4;
+	int n = 0, m = 0;
+	int x;
+	cout << "1 - Информация о книге\n" 
+		 << "2 - Выход" << endl;
+	cin >> x;
+	while (x != 0 && x != 1)
+	{
+		cout << "Ошибка попробуйте еще раз" << endl;
+		cin >> x;
+	}
+	if (x == 1)
+	{
+		cout << " Введите 1 книгу" << endl;
+		book1.setbooks();
+		cout << " Введите 2 книгу " << endl;
+		book2.setbooks();
+		cout << " Введите 3 книгу " << endl;
+		book3.setbooks();
+		cout << " Введите 4 книгу " << endl;
+		book4.setbooks();
+	}
+	if (x == 0)
+	{
+		cout << "Окей досвидания";
+		return 0;
+	}
+	cout << "0 - Показать все книги\n" 
+		 << "конкретный номер книги\n";
+	cin >> x;
+	while (x < -1 || x>5)
+	{
+		cout << "Ошибка попробуйте еще раз" << endl;
+		cin >> x;
+	}
+	switch (x)
+	{
+	case 0:
+		book1.check();
+		book2.check();
+		book3.check();
+		book4.check();
+		break;
+	case 1:
+		book1.check();
+		book1.conclusion();
+		break;
+	case 2:
+		book2.check();
+		book2.conclusion();
+		break;
+	case 3:
+		book3.check();
+		book3.conclusion();
+		break;
+	case 4:
+		book4.check();
+		book4.conclusion();
+		break;
+	}
+	return 0;
